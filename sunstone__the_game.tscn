@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cu7qybvaxuw36"]
+
+[ext_resource type="PackedScene" uid="uid://dn4wcjxpju573" path="res://Scenes/player.tscn" id="1_y4nx8"]
+
+[node name="Sunstone- the game" type="Node2D" unique_id=476663840]
+
+[node name="Player" parent="." unique_id=1495831731 instance=ExtResource("1_y4nx8")]
+position = Vector2(15, 32)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1850120275]
+position = Vector2(12, 14)
+zoom = Vector2(4, 4)

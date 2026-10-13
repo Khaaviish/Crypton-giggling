@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dn4wcjxpju573"]
+
+[ext_resource type="Script" uid="uid://cc3u854lq27lt" path="res://Script/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://d0s7nplxo06pf" path="res://Assets/Ship/ship9.png" id="2_sweqy"]
+[ext_resource type="Texture2D" uid="uid://b70tk4y1ccpih" path="res://Assets/Ship/ship5.png" id="3_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://jmhycqurxp82" path="res://Assets/Ship/ship13.png" id="4_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://b44v6qj2r0dyb" path="res://Assets/Ship/ship1.png" id="5_dw050"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
+atlas = ExtResource("2_sweqy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
+atlas = ExtResource("3_2hs0m")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
+atlas = ExtResource("4_1jxqw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivps1"]
+atlas = ExtResource("5_dw050")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_43q1c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b26j0")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7ghd")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvl01")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivps1")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bwr6v"]
+radius = 9.0
+height = 36.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1495831731]
+script = ExtResource("1_onrkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1673263847]
+position = Vector2(-1, -12)
+sprite_frames = SubResource("SpriteFrames_43q1c")
+animation = &"down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=176326797]
+position = Vector2(-2, -11)
+shape = SubResource("CapsuleShape2D_bwr6v")
